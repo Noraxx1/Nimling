@@ -1,15 +1,54 @@
 # Nimlings
 
-Welcome to Nimlings, a hands-on guide for learning Nim programming language. This comprehensive guide will take you from the basics of Nim to using essential tools like `nimble` and `nim` terminal commands. By the end of this guide, you'll be equipped to write your own Nim programs with confidence!
+Welcome to nimlings a from-examples guide of nim,this guide will teach you from the basic of nim,to using `nimble` and `nim` terminal commands,after this guide you will be already able to write your nim programs!
 
-## Current Status
-Currently, Nimlings is in its early stages, with few exercises available.
 
-## Upcoming Features
-- Progress Bar: Soon, a progress bar will be implemented to track your learning journey.
-- Comprehensive API: An API will be introduced, allowing anyone to contribute to Nimlings with additional exercises and quizzes.
-- More Exercises and Quizzes: Expect a steady influx of new exercises and quizzes to enhance your learning experience.
+# What is done?
+basically nothing for now there are very few exercise
 
-Stay tuned for exciting updates and enhancements to Nimlings!
+# Installation
 
-NImlings © 2024 by noraxx is licensed under CC BY-NC 4.0 
+
+This guide will walk you through the installation process of [Your Software/Application Name]. Follow each step carefully to ensure a successful installation.
+
+## Prerequisites
+
+Before you begin, make sure you have the following prerequisites installed:
+
+- [nim](https://nim-lang.org/install.html)
+- [git](https://git-scm.com/downloads)
+- [make](https://www.gnu.org/software/make/)
+
+## How to install?
+
+1. **Step 1: Clone the repository**
+
+       ```bash
+   git clone https://github.com/Noraxx1/Nimling
+   ```
+   and `cd`
+
+2. **Step 2: Build the source**
+
+    run `make` followed by your operating system to install
+
+   ```bash
+   make windows
+   make linux
+   ```
+
+3. **Step 3: Open nimlings**
+    move to the `build` directory and then run nimlings from the terminal
+
+
+
+
+   You should see the version number printed on the screen if the installation was successful.
+
+
+
+
+# What will be done?
+- very soon a bar to display how much progress the user has maked.
+- a compresive api so anyone can contribuite to nimblings
+- and ofc more exercises and quiz!

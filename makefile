@@ -1,18 +1,21 @@
-BUILD_DIR = build
 
-all: clean build
-
-clean:
-	@echo "Cleaning build directory..."
-	@rm -rf $(BUILD_DIR)
-
-build:
-	@echo "Creating build directory..."
-	@mkdir -p $(BUILD_DIR)
-	@cp -r src/* $(BUILD_DIR)
-	@rm $(BUILD_DIR)/nimlings.nim 
+linux:
+	@echo "Building for Linux..."
+	@mkdir -p build
+	@cp -r src/* build
+	@rm -f build/nimlings.nim 
 	@nimble build
-	@mv nimlings $(BUILD_DIR)
-	@rm build/exercises.nim
+	@mv nimlings build
+	@rm -f build/exercises.nim
 
-.PHONY: all clean build
+
+windows:
+	@echo "Building for Windows..."
+	@mkdir build
+	@xcopy /s src\* build
+	@del /Q build\nimlings.nim 
+	@nimble build
+	@move nimlings build
+	@del /Q build\exercises.nim
+
+.PHONY: linux windows
