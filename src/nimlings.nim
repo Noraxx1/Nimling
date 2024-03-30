@@ -76,12 +76,14 @@ proc run_script(scriptPath: string, silent: bool) =
     command = "nim c -r " & scriptPath
 
   
-  echo execProcess(command)
+  stdout.styledWriteLine(execProcess(command))
 
 proc clear_flush() =
+  setCursorPos(0, 0)
   stdout.eraseScreen()
   stdout.flushFile()
-  stdout.resetAttributes
+  
+  # stdout.resetAttributes()
 
 
 #----MAIN PROCESS----#
@@ -117,11 +119,16 @@ proc start_exercise(exercise: string,desiredOutput : string) =
 
 
       else:
-        stdout.styledWriteLine(fgWhite, "!------", fgGreen, "THE CODE DINT COMPILE/OR AND PASSED THE TESTS", fgWhite, "------!")
-        echo "| your code dint compile or pass the tests propely down h |"
-        echo "| ere the script output/error needed for debugging:       |"
-  
+        stdout.styledWriteLine(fgWhite, "!-------", fgGreen, "THE CODE DINT COMPILE/OR AND PASSED THE TESTS", fgWhite, "--------!")
+        echo "| your code dint compile or pass the tests propely down ther |"
+        echo "| e theres the script output/error needed for debugging:     |"
+        echo "--------------------------------------------------------------"
+
         run_script(to_fix,false)
+
+        echo "Enter to exit.."
+        discard stdin.readLine()
+
 
     if input == "help":
       clear_flush()
