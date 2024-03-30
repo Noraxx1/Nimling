@@ -10,4 +10,4 @@ bin           = @["nimlings"]
 
 # Dependencies
 
-requires "nim >= 1.4.4"
+requires "nim >= 2.0.2"

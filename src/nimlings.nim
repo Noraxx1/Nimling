@@ -2,10 +2,13 @@ import strformat
 import osproc
 
 
-import std/terminal
+import terminal
 import std/os
 import std/strutils
 
+#----GLOBAL VARIABLES----#
+
+var exercise_number = 1
 
 #-----PATH----#
 # section uses : system/nimscript, std/os
@@ -23,14 +26,39 @@ proc promt(text: string) : string =
     return stdin.readLine()
 
 
+proc print_bar(ammount: int) =
+    stdout.styledWriteLine(
+        fgRed, "[0 ",
+        if ammount < 30: fgRed
+        elif ammount < 70: fgYellow
+        else: fgGreen, '='.repeat(ammount),
+        " ", fgGreen, $ammount, "/", fgGreen, "96]")
+
+
+proc done(filename: string): bool =
+  let file = open(filename)
+  
+  if file != nil:
+    var line = file.readLine()
+    close(file)
+    
+    if line != "":
+      if line.contains("NOT") and line.contains("DONE"):
+        return true
+      else:
+        return false
+    else:
+      return false
+  else:
+    return false
 
 
 proc execute_script(script: string, silent: bool, desiredOutput: string): bool =
   var command: string
   if silent:
-    command = "nim -d:release c -r --warnings:off --hints:off " & script
+    command = "nim c -r --warnings:off --hints:off " & script
   else:
-    command = "nim -d:release c -r " & script
+    command = "nim c -r " & script
 
   let output = execCmdEx(command)
 
@@ -43,17 +71,18 @@ proc run_script(scriptPath: string, silent: bool) =
 
   var command: string
   if silent:
-    command = "nim -d:release c -r --warnings:off --hints:off " & scriptPath
+    command = "nim c -r --warnings:off --hints:off " & scriptPath
   else:
-    command = "nim -d:release c -r " & scriptPath
+    command = "nim c -r " & scriptPath
 
   
   echo execProcess(command)
 
 proc clear_flush() =
-      stdout.eraseScreen()
-      stdout.flushFile() 
-      stdout.resetAttributes()
+  stdout.eraseScreen()
+  stdout.flushFile()
+  stdout.resetAttributes
+
 
 #----MAIN PROCESS----#
 # uses :  std/strutils, std/terminal, std/os
@@ -67,9 +96,11 @@ proc start_exercise(exercise: string,desiredOutput : string) =
   var done = false
 
   while not done:
+
+    # clear_flush()
+    print_bar(exercise_number)
     var input = stdin.readLine()
 
-    
     if input == "run":
 
       clear_flush()
@@ -79,24 +110,52 @@ proc start_exercise(exercise: string,desiredOutput : string) =
         stdout.resetAttributes()
 
         stdout.styledWriteLine(fgWhite, "!------", fgGreen, "THE CODE COMPILES AND PASSES THE TEST", fgWhite, "------!")
-        echo "| your code compiles, you can freely goto the next code to fix it |"
+        echo "| your code compiles, Remove the first line to go to the next code |"
 
         stdout.resetAttributes()
-
         done = true
+
+
       else:
         stdout.styledWriteLine(fgWhite, "!------", fgGreen, "THE CODE DINT COMPILE/OR AND PASSED THE TESTS", fgWhite, "------!")
-        echo "| your code dint compile or pass the tests propely heres "
-        echo "| down this line theres the script output/error:        |"
-        echo "--------------------------------------------------------------------"
+        echo "| your code dint compile or pass the tests propely down h |"
+        echo "| ere the script output/error needed for debugging:       |"
+  
         run_script(to_fix,false)
 
+    if input == "help":
+      clear_flush()
+
+      echo "POSSIBLE COMMANDS ARE"
+      echo "clear : clears the terminal"
+      echo "run : runs the current exercise"
+      echo "explain : explains the task and how it works"
+      echo "hint : gives you a hint on how to do the code"
+      echo "exit : exit nimlings"
+      echo "Enter to exit.."
+      discard stdin.readLine()
+
     if input == "explain":
-      echo "test"
+      clear_flush()
       run_script(explanation,true)
+      discard stdin.readLine()
 
     if input == "hint":
+      clear_flush()
       run_script(hint,true)
-
+    
+    if input == "clear":
+      clear_flush()
+    
+    if input == "exit":
+      clear_flush()
+      echo "Bye"
+      quit()
+    else:
+      clear_flush()
+    
+  if done == true:
+    done = false
+    quit()
 
 start_exercise("code/base/hello","Hello World!")
