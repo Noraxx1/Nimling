@@ -1,12 +1,15 @@
 # Nimlings
 
-Welcome to nimlings a from-examples guide of nim,this guide will teach you from the basic of nim,to using `nimble` and `nim` terminal commands,after this guide you will be already able to write your nim programs!
+Welcome to Nimlings, a hands-on guide for learning Nim programming language. This comprehensive guide will take you from the basics of Nim to using essential tools like `nimble` and `nim` terminal commands. By the end of this guide, you'll be equipped to write your own Nim programs with confidence!
 
+## Current Status
+Currently, Nimlings is in its early stages, with few exercises available.
 
-# What is done?
-basically nothing for now there are very few exercise
+## Upcoming Features
+- Progress Bar: Soon, a progress bar will be implemented to track your learning journey.
+- Comprehensive API: An API will be introduced, allowing anyone to contribute to Nimlings with additional exercises and quizzes.
+- More Exercises and Quizzes: Expect a steady influx of new exercises and quizzes to enhance your learning experience.
 
-# What will be done?
-- very soon a bar to display how much progress the user has maked.
-- a compresive api so anyone can contribuite to nimblings
-- and ofc more exercises and quiz!
+Stay tuned for exciting updates and enhancements to Nimlings!
+
+NImlings © 2024 by noraxx is licensed under CC BY-NC 4.0 
