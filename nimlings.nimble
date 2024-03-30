@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.0.6"
+version       = "0.1.0"
 author        = "Noraxx"
 description   = "Learn the Nim programming language broken programs and doing quiz!"
 license       = "MIT"
