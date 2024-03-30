@@ -23,10 +23,10 @@ Before you begin, make sure you have the following prerequisites installed:
 
 1. **Step 1: Clone the repository**
 
-       ```bash
+```bash
    git clone https://github.com/Noraxx1/Nimling
    ```
-   and `cd`
+   and `cd` inside of it
 
 2. **Step 2: Build the source**
 
@@ -39,11 +39,7 @@ Before you begin, make sure you have the following prerequisites installed:
 
 3. **Step 3: Open nimlings**
     move to the `build` directory and then run nimlings from the terminal
-
-
-
-
-   You should see the version number printed on the screen if the installation was successful.
+    if you did all good you should see the nimlings menu open.
 
 
 
