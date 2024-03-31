@@ -6,11 +6,16 @@ import terminal
 import std/os
 import std/strutils
 
-#----GLOBAL VARIABLES DECLARATION----#
+#----GLOBAL VARIABLES----#
 
-var exercise_number = 0
-var total_exercises = 0
+var exercise_number = 1
+var total_exercises = 2
 
+#-----PATH----#
+# section uses : system/nimscript, std/os
+if getCurrentDir() != getAppDir():
+    echo "Nimlings requires to be runned in its working directory,please move in to nimlings before trying again."
+    quit()
 
 
 
@@ -59,9 +64,9 @@ proc done(filename: string): bool =
 proc execute_script(script: string, silent: bool, desiredOutput: string): bool =
   var command: string
   if silent:
-    command = "nim e --warnings:off --hints:off " & script
+    command = "nim c -r --warnings:off --hints:off " & script
   else:
-    command = "nim e " & script
+    command = "nim c -r " & script
 
   let output = execCmdEx(command)
 
@@ -71,14 +76,15 @@ proc execute_script(script: string, silent: bool, desiredOutput: string): bool =
     return output.exitCode == 1
 
 proc run_script(scriptPath: string, silent: bool) =
+
   var command: string
   if silent:
-    command = "nim e --warnings:off --hints:off " & scriptPath
+    command = "nim c -r --warnings:off --hints:off " & scriptPath
   else:
-    command = "nim e --hints:off " & scriptPath
+    command = "nim c -r " & scriptPath
 
-  let output = execProcess(command)
-  echo output
+  
+  stdout.styledWriteLine(execProcess(command))
 
 proc clear_flush() =
   setCursorPos(0, 0)
@@ -115,15 +121,10 @@ proc start_exercise(exercise: string,desiredOutput : string) =
         if done(to_fix):
           exercise_number += 1
           done = true
-
         else:
           clear_flush()
           stdout.styledWriteLine(fgWhite, "!------", fgGreen, "THE CODE COMPILES AND PASSES THE TEST", fgWhite, "------!")
-          echo "| your code compiles and passes the test you can now proceed to t- |"
-          echo "| he next code by removing `NOT DONE` from the first line then re- |"
-          echo "| run the current exercise to go at the next one.                  |"
-        
-          echo "Press enter to proceed.."
+          echo "| your code compiles, Remove the first line to go to the next code |"
           discard stdin.readLine()
           stdout.resetAttributes()
 
@@ -136,12 +137,10 @@ proc start_exercise(exercise: string,desiredOutput : string) =
         echo "--------------------------------------------------------------"
 
         run_script(to_fix,false)
-        if desiredOutput != "":
-          stdout.styledWriteLine(fgRed,"^^^^^^^")
-          echo "[Nimlings] Output should contain/be: " & desiredOutput
-          echo ""
-
-        echo "Press enter to proceed.."
+        stdout.styledWriteLine(fgRed,"^^^^^^^")
+        echo "[Nimlings]Output should exactly be: " & desiredOutput
+        echo ""
+        echo "Enter to exit.."
         discard stdin.readLine()
 
 
@@ -154,8 +153,7 @@ proc start_exercise(exercise: string,desiredOutput : string) =
       echo "explain : explains the task and how it works"
       echo "hint : gives you a hint on how to do the code"
       echo "exit : exit nimlings"
-      echo ""
-      echo "Press enter to proceed.."
+      echo "Enter to exit.."
       discard stdin.readLine()
 
     if input == "explain":
@@ -166,7 +164,6 @@ proc start_exercise(exercise: string,desiredOutput : string) =
     if input == "hint":
       clear_flush()
       run_script(hint,true)
-      discard stdin.readLine()
     
     if input == "clear":
       clear_flush()
@@ -182,27 +179,3 @@ proc start_exercise(exercise: string,desiredOutput : string) =
     done = false
     # break
 
-#-----PATH----#
-# section uses : system/nimscript, std/os
-if getCurrentDir() != getAppDir():
-    echo "Nimlings requires to be runned in its working directory,please move in to nimlings before trying again."
-    quit()
-else:
-  clear_flush()
-
-
-#----STARTING----#
-
-
-proc init() =
-  exercise_number = 0
-  total_exercises = 3
-
-
-  # NOTE : the path moves already to the exercises folder
-  start_exercise("base/firstprogram","Hello World!")
-  start_exercise("base/variables/declaration","Your age is")
-  start_exercise("base/variables/immutable","1.59")
-
-
-init()
