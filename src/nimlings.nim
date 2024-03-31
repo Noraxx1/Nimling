@@ -26,7 +26,14 @@ proc promt(text: string) : string =
     return stdin.readLine()
 
 
-proc print_bar(ammount: int) =
+proc print_bar(ammount: int,exercise: string) =
+
+
+    stdout.styledWriteLine(
+        if ammount < 30: fgRed
+        elif ammount < 70: fgYellow
+        else: fgGreen,"[", exercise, "]")
+
     stdout.styledWriteLine(
         fgRed, "[0 ",
         if ammount < 30: fgRed
@@ -44,11 +51,11 @@ proc done(filename: string): bool =
     
     if line != "":
       if line.contains("NOT") and line.contains("DONE"):
-        return true
-      else:
         return false
+      else:
+        return true
     else:
-      return false
+      return true
   else:
     return false
 
@@ -100,7 +107,7 @@ proc start_exercise(exercise: string,desiredOutput : string) =
   while not done:
 
     # clear_flush()
-    print_bar(exercise_number)
+    print_bar(exercise_number,exercise)
     var input = stdin.readLine()
 
     if input == "run":
@@ -109,23 +116,29 @@ proc start_exercise(exercise: string,desiredOutput : string) =
       
       if execute_script(to_fix,true,desiredOutput):
       
-        stdout.resetAttributes()
 
-        stdout.styledWriteLine(fgWhite, "!------", fgGreen, "THE CODE COMPILES AND PASSES THE TEST", fgWhite, "------!")
-        echo "| your code compiles, Remove the first line to go to the next code |"
+        if done(to_fix):
+          exercise_number += 1
+          done = true
+        else:
+          clear_flush()
+          stdout.styledWriteLine(fgWhite, "!------", fgGreen, "THE CODE COMPILES AND PASSES THE TEST", fgWhite, "------!")
+          echo "| your code compiles, Remove the first line to go to the next code |"
+          discard stdin.readLine()
+          stdout.resetAttributes()
 
-        stdout.resetAttributes()
-        done = true
 
 
       else:
-        stdout.styledWriteLine(fgWhite, "!-------", fgGreen, "THE CODE DINT COMPILE/OR AND PASSED THE TESTS", fgWhite, "--------!")
+        stdout.styledWriteLine(fgWhite, "!-------", fgRed, "THE CODE DINT COMPILE/OR AND PASSED THE TESTS", fgWhite, "--------!")
         echo "| your code dint compile or pass the tests propely down ther |"
         echo "| e theres the script output/error needed for debugging:     |"
         echo "--------------------------------------------------------------"
 
         run_script(to_fix,false)
-
+        stdout.styledWriteLine(fgRed,"^^^^^^^")
+        echo "[Nimlings]Output should exactly be: " & desiredOutput
+        echo ""
         echo "Enter to exit.."
         discard stdin.readLine()
 
@@ -163,6 +176,7 @@ proc start_exercise(exercise: string,desiredOutput : string) =
     
   if done == true:
     done = false
-    quit()
+    # break
 
 start_exercise("code/base/hello","Hello World!")
+start_exercise("code/base/syntax","")

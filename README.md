@@ -45,6 +45,11 @@ Before you begin, make sure you have the following prerequisites installed:
 
 
 # What will be done?
-- very soon a bar to display how much progress the user has maked.
 - a compresive api so anyone can contribuite to nimblings
 - and ofc more exercises and quiz!
+
+
+# Thanks to
+
+basically i taked the idea and look from: [rustling] (https://github.com/rust-lang/rustlings/)
+original nimlings is: [old nimlings] (https://github.com/sergiotapia/nimlings)
