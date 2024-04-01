@@ -197,12 +197,17 @@ proc init() =
 
   # NOTE : the path moves already to the exercises folder
 
-  start_exercise("base/firstprogram","Hello World!")
+  start_exercise("base/firstprogram","Hello World!") #¹
 
   # VARIABLES #
-  start_exercise("base/variables/declaration","Your age is:")
-  start_exercise("base/variables/immutable/let","1.59")
-  start_exercise("base/variables/immutable/const","hi")
-  start_exercise("base/variables/datatypes1","14")
+  start_exercise("base/variables/declaration","Your age is:")#2
+  start_exercise("base/variables/immutable/let","1.59")#3
+  start_exercise("base/variables/immutable/const","hi")#4
+  start_exercise("base/variables/datatypes1","14")#5
+  start_exercise("base/variables/floats","10.4")#6
+
+  # FIRST QUIZ #
+  start_exercise("base/quiz/pipe","6.4")#7
+
 
 init()
