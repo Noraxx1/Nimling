@@ -4,7 +4,7 @@ Welcome to nimlings a from-examples guide of nim,this guide will teach you from 
 
 
 # What is done?
-basically nothing for now there are very few exercise
+The core of nimlings is almost done,slowly adding exercises
 
 # Installation
 

@@ -1,8 +1,9 @@
 import strformat
 import osproc
-
-
 import terminal
+
+
+import std/rdstdin
 import std/os
 import std/strutils
 
@@ -17,12 +18,8 @@ var total_exercises = 0
 #----HELPERS----#
 # section uses : std/strutils, std/terminal, std/os
 
-proc promt(text: string) : string =
-    echo text
-    return stdin.readLine()
 
-
-proc print_bar(ammount: int,exercise: string) =
+proc  print_progress(ammount: int,exercise: string) =
 
 
     stdout.styledWriteLine(
@@ -56,7 +53,7 @@ proc done(filename: string): bool =
     return false
 
 
-proc execute_script(script: string, silent: bool, desiredOutput: string): bool =
+proc run_script_and_check(script: string, silent: bool, desiredOutput: string): bool =
   var command: string
   if silent:
     command = "nim e --warnings:off --hints:off " & script
@@ -64,11 +61,12 @@ proc execute_script(script: string, silent: bool, desiredOutput: string): bool =
     command = "nim e " & script
 
   let output = execCmdEx(command)
-
-  if output.output.contains(desiredOutput):
+  if desiredOutput == "":
     return output.exitCode == 0
   else:
-    return output.exitCode == 1
+    let trimmedOutput = output.output.strip().toLowerAscii()
+    let normalizedDesiredOutput = desiredOutput.toLowerAscii()
+    return trimmedOutput.contains(normalizedDesiredOutput) and output.exitCode == 0
 
 proc run_script(scriptPath: string, silent: bool) =
   var command: string
@@ -80,7 +78,7 @@ proc run_script(scriptPath: string, silent: bool) =
   let output = execProcess(command)
   echo output
 
-proc clear_flush() =
+proc clear_terminal() =
   setCursorPos(0, 0)
   stdout.eraseScreen()
   stdout.flushFile()
@@ -101,15 +99,15 @@ proc start_exercise(exercise: string,desiredOutput : string) =
 
   while not done:
 
-    # clear_flush()
-    print_bar(exercise_number,exercise)
-    var input = stdin.readLine()
+    # clear_terminal()
+     print_progress(exercise_number,exercise)
+     var input = stdin.readLine()
 
-    if input == "run":
+     if input == "run":
 
-      clear_flush()
+      clear_terminal()
       
-      if execute_script(to_fix,true,desiredOutput):
+      if run_script_and_check(to_fix,true,desiredOutput):
       
 
         if done(to_fix):
@@ -117,14 +115,14 @@ proc start_exercise(exercise: string,desiredOutput : string) =
           done = true
 
         else:
-          clear_flush()
+          clear_terminal()
           stdout.styledWriteLine(fgWhite, "!------", fgGreen, "THE CODE COMPILES AND PASSES THE TEST", fgWhite, "------!")
           echo "| your code compiles and passes the test you can now proceed to t- |"
           echo "| he next code by removing `NOT DONE` from the first line then re- |"
           echo "| run the current exercise to go at the next one.                  |"
         
-          echo "Press enter to proceed.."
-          discard stdin.readLine()
+
+          discard readLineFromStdin("Press enter to proceed..")
           stdout.resetAttributes()
 
 
@@ -141,12 +139,11 @@ proc start_exercise(exercise: string,desiredOutput : string) =
           echo "[Nimlings] Output should contain/be: " & desiredOutput
           echo ""
 
-        echo "Press enter to proceed.."
-        discard stdin.readLine()
+          discard readLineFromStdin("Press enter to proceed..")
 
 
-    if input == "help":
-      clear_flush()
+     if input == "help":
+      clear_terminal()
 
       echo "POSSIBLE COMMANDS ARE"
       echo "clear : clears the terminal"
@@ -155,31 +152,30 @@ proc start_exercise(exercise: string,desiredOutput : string) =
       echo "hint : gives you a hint on how to do the code"
       echo "exit : exit nimlings"
       echo ""
-      echo "Press enter to proceed.."
-      discard stdin.readLine()
+      discard readLineFromStdin("Press enter to proceed..")
 
-    if input == "explain":
-      clear_flush()
+     if input == "explain":
+      clear_terminal()
       run_script(explanation,true)
       discard stdin.readLine()
 
-    if input == "hint":
-      clear_flush()
+     if input == "hint":
+      clear_terminal()
       run_script(hint,true)
       discard stdin.readLine()
     
-    if input == "clear":
-      clear_flush()
+     if input == "clear":
+      clear_terminal()
     
-    if input == "exit":
-      clear_flush()
+     if input == "exit":
+      clear_terminal()
       echo "Bye"
       quit()
-    else:
-      clear_flush()
+     else:
+      clear_terminal()
     
-  if done == true:
-    done = false
+  #if done:
+    #done = false
     # break
 
 #-----PATH----#
@@ -188,7 +184,7 @@ if getCurrentDir() != getAppDir():
     echo "Nimlings requires to be runned in its working directory,please move in to nimlings before trying again."
     quit()
 else:
-  clear_flush()
+  clear_terminal()
 
 
 #----STARTING----#
@@ -201,7 +197,7 @@ proc init() =
 
   # NOTE : the path moves already to the exercises folder
   start_exercise("base/firstprogram","Hello World!")
-  start_exercise("base/variables/declaration","Your age is")
+  start_exercise("base/variables/declaration","Your age is: ")
   start_exercise("base/variables/immutable","1.59")
 
 

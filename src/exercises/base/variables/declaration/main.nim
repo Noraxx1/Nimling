@@ -11,7 +11,7 @@ proc main() =
     age = "a"
 
     echo "Hello:" & name # the and(&) simble is used to use multiple argouments in a function,whe used it to print multiple text in a `echo` function
-    echo "Your age is:" & age # Isn't something missing here?
+    echo "Your age is: " & age # Isn't something missing here?
 
     
 main()
