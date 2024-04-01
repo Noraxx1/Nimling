@@ -1,55 +1,54 @@
-# Nimlings
-
-Welcome to nimlings a from-examples guide of nim,this guide will teach you from the basic of nim,to using `nimble` and `nim` terminal commands,after this guide you will be already able to write your nim programs!
 
 
-# What is done?
-The core of nimlings is almost done,slowly adding exercises
-
-# Installation
+<h1 align="center">Nimlings</h1>
 
 
-This guide will walk you through the installation process of [Your Software/Application Name]. Follow each step carefully to ensure a successful installation.
 
-## Prerequisites
+<p align="center">
+		<img alt="Issues" src="https://img.shields.io/github/issues/Noraxx1/Nimling?style=for-the-badge&logo=gitbook&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41"></a>
+	<a href="https://discord.com/servers/907385605422448742">
+		<img alt="Stargazers" src="https://img.shields.io/github/stars/Noraxx1/nimling?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41"></a>
+				<img alt="Releases" src="https://img.shields.io/badge/version-V1.0.3-A6DA95?style=for-the-badge&logo=github&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41"/></a>
+	<a href="https://github.com/catppuccin/catppuccin/issues">
+</p>
 
-Before you begin, make sure you have the following prerequisites installed:
+# What is nimlings?
+nimlings is a tool to learn nim for begginer by fixing broken code examples,it will get you used to writing nim code.
+
+- Who is this for?
+Nimling is pointed to be for brand new programmers, and people who knows another lenguage and whant to switch in nim.
+
+# How i install it?
+
+Well is very easy but  first you will need to have:
 
 - [nim](https://nim-lang.org/install.html)
 - [git](https://git-scm.com/downloads)
-- [make](https://www.gnu.org/software/make/)
 
-## How to install?
-
-1. **Step 1: Clone the repository**
-
-```bash
-   git clone https://github.com/Noraxx1/Nimling
-   ```
-   and `cd` inside of it
-
-2. **Step 2: Build the source**
-
-    run `make` followed by your operating system to install
-
-   ```bash
-   make windows
-   make linux
-   ```
-
-3. **Step 3: Open nimlings**
-    move to the `build` directory and then run nimlings from the terminal
-    if you did all good you should see the nimlings menu open.
+and if youre a windows user:
+- [make](https://gnuwin32.sourceforge.net/packages/make.htm)
 
 
+after clone the repository whit:
+`git clone https://github.com/Noraxx1/Nimling`
+
+move to the repository using:
+`cd NImling` OR use a file manager to move inside of it after open a terminal in the folder.
+
+compile the code;
+run `make` followed by your operating system to build nimling
+
+`make linux`
+`make windows`
+
+after you will find the executable in the build directory move to it and run it from the terminal.
+
+# What is done?
+Right now there arent many exercises but the core of nimling is done you can check it at: [nimlings.nim](https://github.com/Noraxx1/Nimling/blob/main/src/nimlings.nim)
 
 
-# What will be done?
-- a compresive api so anyone can contribuite to nimblings
-- and ofc more exercises and quiz!
+# Credits
+- original nimling: https://github.com/sergiotapia/nimlings
+- catpucccin(readme widgets):https://github.com/catppuccin/catppuccin/tree/main
 
 
-# Thanks to
-
-basically i taked the idea and look from: [rustling] (https://github.com/rust-lang/rustlings/)
-original nimlings is: [old nimlings] (https://github.com/sergiotapia/nimlings)
