@@ -2,11 +2,6 @@
 
 <h1 align="center">Nimlings</h1>
 
-<details>
-<summary>Screenshots/summary>
-	<td><br><img src="images/error.png" height="400" width="200" /></td>
-</details>
-
 
 <p align="center">
 		<img alt="Issues" src="https://img.shields.io/github/issues/Noraxx1/Nimling?style=for-the-badge&logo=gitbook&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41"></a>
