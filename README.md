@@ -1,4 +1,3 @@
-
 <h1 align="center">Nimlings</h1>
 <p align="center">
 <img  src="https://img.shields.io/badge/Exercises-7-e5c890?logo=w3c&logoColor=fff&style=for-the-badge&labelColor=302D41"  alt="W3C"></a>
@@ -22,8 +21,8 @@ Nimlings is a tool for learning Nim for beginners by fixing broken code examples
 Nimlings is aimed at brand new programmers and people who know another language and want to switch to Nim.
 
 
-# Why?
-well cause nim is a good coding lenguage and i think it deserves a fun way to make more people get attracted to it.
+- Why?
+Well, because Nim is a good coding language and I think it deserves a fun way to attract more people to it.
 
 
 # How do I install it?
@@ -77,7 +76,7 @@ After that, you will find the executable in the build directory. Move to it and 
 # What's done?
 
 Right now, there aren't many exercises, but the core of Nimlings is complete. You can check it out at: [nimlings.nim](https://github.com/Noraxx1/Nimling/blob/main/src/
-nimlings.nim) or you can see how much exercises are done at the top of this page.
+nimlings.nim) or you can see how many exercises are done at the top of this page.
 
   
 

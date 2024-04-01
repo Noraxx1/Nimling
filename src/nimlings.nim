@@ -192,12 +192,12 @@ else:
 
 proc init() =
   exercise_number = 0
-  total_exercises = 5
+  total_exercises = 8
 
 
   # NOTE : the path moves already to the exercises folder
 
-  start_exercise("base/firstprogram","Hello World!") #¹
+  start_exercise("base/firstprogram","Hello World!") #1
 
   # VARIABLES #
   start_exercise("base/variables/declaration","Your age is:")#2
@@ -205,9 +205,12 @@ proc init() =
   start_exercise("base/variables/immutable/const","hi")#4
   start_exercise("base/variables/datatypes1","14")#5
   start_exercise("base/variables/floats","10.4")#6
-
+  start_exercise("base/variables/transmutation","28.456")#7
+  
   # FIRST QUIZ #
-  start_exercise("base/quiz/pipe","6.4")#7
+  start_exercise("base/quiz/pipe","6.4")#8
+
+
 
 
 init()

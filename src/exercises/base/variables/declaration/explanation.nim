@@ -3,7 +3,7 @@ echo "For example, 'int' for integers and 'string' for text."
 
 echo "Nim is statically typed, which means you need to declare the type of a variable before using it. Here's how you can define variables:"
 
-echo ""
+echo "NOTE: whe can also define multiple variables by typing `var` followed by a indentation and then multiples variables"
 echo "NOTE: The dollar symbol ($) transforms an integer to a string, making it possible to print a string followed by an integer with an `echo`, or else we would get a type mismatch."
 echo "NOTE: The ampersand (&) symbol is used to use multiple arguments in a function. We use it to print multiple texts in an `echo` function."
 echo ""

@@ -4,8 +4,9 @@
 # Is reccomended for you to first read the code,then to run the explain command.
 
 
-var name = ""  # Creates a string type variable,and sets its content.
-var age : int  # Initializes an age variable.
+var
+    name = ""  # Creates a string type variable,and sets its content.
+    age : int # Initializes an age variable.
 
 proc main() =
     age = "a"
