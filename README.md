@@ -1,87 +1,37 @@
-<h1 align="center">Nimlings</h1>
-<p align="center">
-<img  src="https://img.shields.io/badge/Exercises-7-e5c890?logo=w3c&logoColor=fff&style=for-the-badge&labelColor=302D41"  alt="W3C"></a>
-<a  href="https://github.com/Noraxx1/Nimling/issues">
-<img  alt="Issues"  src="https://img.shields.io/github/issues/Noraxx1/Nimling?style=for-the-badge&logo=gitbook&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41"></a>
-<a  href="https://discord.com/servers/907385605422448742">
-<img  alt="Stargazers"  src="https://img.shields.io/github/stars/Noraxx1/nimling?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41"></a>
-<img  alt="Releases"  src="https://img.shields.io/badge/version-V1.0.5-A6DA95?style=for-the-badge&logo=github&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41"/></a>
-</p>
+<h1 align="center">Nimlings: Learn <img src="https://github.com/nim-lang/assets/blob/master/Art/logo-crown.png?raw=true" width=45px style="vertical-align: middle;"> Nim with ease!</h1>
+<div align="center">
+<img  src="https://img.shields.io/badge/Exercises-7-e5c890?logo=w3c&logoColor=fff&style=for-the-badge&labelColor=302D41"  alt="W3C"></a><a  href="https://github.com/Noraxx1/Nimling/issues"> <img  alt="Issues"  src="https://img.shields.io/github/issues/Noraxx1/Nimling?style=for-the-badge&logo=gitbook&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41"></a><a  href="https://disc ord.com/servers/907385605422448742"> <img  alt="Stargazers"  src="https://img.shields.io/github/stars/Noraxx1/nimling?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41"></a> <img  alt="Releases"  src="https://img.shields.io/badge/version-V1.0.5-A6DA95?style=for-the-badge&logo=github&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41"/></a>
+</div>
 
-  
+___
 
-# What is Nimlings?
+## What's Nimlings?
+Nimlings is a tool that allows anyone to learn **Nim programming language** with ease. You are given "exercises" - pieces of broken, incorrect code. Afterwards, you have to fix the code yourself and then check if it works as intended in the exercise.
 
-Nimlings is a tool for learning Nim for beginners by fixing broken code examples. It will help you get used to writing Nim code.
+**How do I fix the exercises if I dont know the language?** Don't worry. Every task has an explanation and a hint to help you on your way. Nimlings is aimed for brand new programmers that want to get into coding - everything is suited for you.
 
-  
+___
+## Why Nim?
+**Nim** is relatively new in the world of programming languages. It's an expressive, elegant and efficient. Future lies behind languages like Nim, and we want to help you learn it. The way Nimlings teaches is incredibly productive and intuitive. 
 
-- Who is this for?
+___
+## How do I install Nimlings?
+1. The installation process is straightforward. First let's setup the enviroment on your PC. You need to install the Nim programming language from their official website: https://nim-lang.org/install.html
+2. Afterwards, you need to install a tool called **Git** - if you aren't already familiar with it, it allows for easy distribution of programming projects. You can install git from this website: https://git-scm.com/downloads. If you don't want to install Git for whatever reason, you may just copy the files from this repository to your computer manually.
 
-Nimlings is aimed at brand new programmers and people who know another language and want to switch to Nim.
+If you use Windows OS you will need to install an additional tool called **Make** - this one allows to easily build programming projects. You can download it from the following page: https://gnuwin32.sourceforge.net/packages/make.htm
+## The installation process
+Create a folder (directory) on your PC. Then, open it using any terminal (cmd). Then, run the following program to copy the files from this repository to the newly created folder: `git clone https://github.com/Noraxx1/Nimling`.
 
+Now, go inside of the folder you just copied (Numlings). If it isn't present and you just have the files of the repository right in your folder, move on to the next step.
 
-- Why?
-Well, because Nim is a good coding language and I think it deserves a fun way to attract more people to it.
-
-
-# How do I install it?
-
-  
-
-It's very easy, but first, you will need to have:
-
-  
-
--  [Nim](https://nim-lang.org/install.html)
-
--  [Git](https://git-scm.com/downloads)
-
-  
-
-And if you're a Windows user:
-
--  [Make](https://gnuwin32.sourceforge.net/packages/make.htm)
-
-  
-
-After cloning the repository with:
-
-`git clone https://github.com/Noraxx1/Nimling`
-
-  
-
-Move to the repository using:
-
-`cd Nimling` OR use a file manager to navigate to it and then open a terminal in the folder.
-
-  
-
-Compile the code by running:
-
-`make` followed by your operating system to build Nimlings
-
-  
-
-`make linux`
-
-`make windows`
-
-  
+To compile the program (make it an executable file) you will need to run one of these commands:
+- For Windows: `make windows`
+- For Linux: `make linux`
 
 After that, you will find the executable in the build directory. Move to it and run it from the terminal.
+___
+### Credits
 
-  
-
-# What's done?
-
-Right now, there aren't many exercises, but the core of Nimlings is complete. You can check it out at: [nimlings.nim](https://github.com/Noraxx1/Nimling/blob/main/src/
-nimlings.nim) or you can see how many exercises are done at the top of this page.
-
-  
-
-# Credits
-
-- Original Nimlings: https://github.com/sergiotapia/nimlings
-
-- Catppucccin (readme widgets): https://github.com/catppuccin/catppuccin/tree/main
+- Original Nimlings; has been discontinued: https://github.com/sergiotapia/nimlings
+- Widgets on top of this `README` file; We thank Catppucccin: https://github.com/catppuccin/catppuccin/tree/main
