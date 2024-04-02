@@ -1,0 +1,11 @@
+{
+    "explanation": "Floats are a special tipe of numeric variables that can hold decimal numbers
+we already used floats in different exercises such as `datatypes1`.
+You can use them exactly like a `int` type variable whit the only difference is to be able to use decimals.
+
+Note: floats take up *8 the memory of a int! So you should use them only when needed.
+Note: you can declare a float by adding a deciman number to it eg. `3.0`",
+
+
+    "hint" : "This code is trying to  multiply a float for a integrer,transform the that `8` in to a `8.0`"
+}

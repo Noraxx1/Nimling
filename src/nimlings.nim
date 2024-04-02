@@ -157,7 +157,7 @@ proc start_exercise(exercise: string,desiredOutput : string) =
           stdout.styledWriteLine(fgRed,"^^^^^^^")
           echo "[Nimlings] Output should contain/be: " & desiredOutput
           echo ""
-
+#a
           discard readLineFromStdin("Press enter to proceed..")
 
 

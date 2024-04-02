@@ -1,0 +1,8 @@
+{
+    "explanation": "Integers (that we covered before) can be used in mathematical calculations with basic operators.
+For example, `/` for division, `*` for multiplication, `+` for addition, and `-` for subtraction.
+We also have more advanced symbols such as `<` for less than and `>` for greater than.",
+
+    "hint": "This code is missing to give a content to the variable age,you should definitely give one to it."
+  }
+  
