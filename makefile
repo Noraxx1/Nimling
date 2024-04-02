@@ -10,12 +10,11 @@ linux:
 
 
 windows:
-	@echo "Building for Windows..."
-	@mkdir build
-	@xcopy /s src\* build
-	@del /Q build\nimlings.nim 
-	@nimble build
-	@move nimlings build
-	@del /Q build\exercises.nim
+    @echo Building for Windows...
+    mkdir build
+    xcopy /s /y src\*.nim build\
+    nimble build
+    move nimlings.exe build
+    del /Q build\exercises.nim
 
 .PHONY: linux windows

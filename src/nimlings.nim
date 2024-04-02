@@ -1,7 +1,7 @@
 import strformat
 import osproc
 import terminal
-
+import json
 
 import std/rdstdin
 import std/os
@@ -16,11 +16,10 @@ var total_exercises = 0
 
 
 #----HELPERS----#
-# section uses : std/strutils, std/terminal, std/os
+# section uses : std/strutils, std/terminal, std/os,json
 
 
 proc  print_progress(ammount: int,exercise: string) =
-
 
     stdout.styledWriteLine(
         if ammount < 30: fgRed
@@ -85,15 +84,34 @@ proc clear_terminal() =
   
   # stdout.resetAttributes()
 
+type
+ json_data = object
+   hint: string
+   explanation: string
+  
+proc fetch_json(fileName: string): json_data =
+ let jsonData = parseFile(fileName)
+ result.hint = jsonData["hint"].getStr()
+ result.explanation = jsonData["explanation"].getStr()
+
 
 #----MAIN PROCESS----#
-# uses :  std/strutils, std/terminal, std/os
+# uses :  std/strutils, std/terminal, std/os, json
 
 proc start_exercise(exercise: string,desiredOutput : string) =
   let full_path = fmt"exercises/{exercise}/"
   let to_fix = fmt"{full_path}/main.nim"
-  let explanation = fmt"{full_path}/explanation.nim"
-  let hint = fmt"{full_path}/hint.nim"
+
+  let exercise_data = fetch_json(fmt"{full_path}/data.json")
+
+  let explanation = exercise_data.explanation
+  let hint = exercise_data.hint
+
+  if explanation == "None":
+    explanation = "Sorry theres no explanation for this exercise."
+  if hint == "None":
+    hint = "Sorry theres no hint for this exercise."
+
 
   var done = false
 
@@ -106,9 +124,9 @@ proc start_exercise(exercise: string,desiredOutput : string) =
      if input == "run":
 
       clear_terminal()
-      
+
       if run_script_and_check(to_fix,true,desiredOutput):
-      
+
 
         if done(to_fix):
           exercise_number += 1
@@ -116,11 +134,12 @@ proc start_exercise(exercise: string,desiredOutput : string) =
 
         else:
           clear_terminal()
-          stdout.styledWriteLine(fgWhite, "!------", fgGreen, "THE CODE COMPILES AND PASSES THE TEST", fgWhite, "------!")
-          echo "| your code compiles and passes the test you can now proceed to t- |"
-          echo "| he next code by removing `NOT DONE` from the first line then re- |"
-          echo "| run the current exercise to go at the next one.                  |"
-        
+          stdout.styledWriteLine(fgWhite, "!---------", fgGreen, "THE CODE COMPILES AND PASSES THE TEST", fgWhite, "---------!")
+          echo "| your code compiled and passed the test,you can now pr- |"
+          echo "| oceed to the next exercise by removing `# NOT DONE` f- |"
+          echo "| rom the start of the first line,after type `run` again |"
+          echo "| inside the nimlings console to proceed.                |"
+
 
           discard readLineFromStdin("Press enter to proceed..")
           stdout.resetAttributes()
@@ -156,13 +175,15 @@ proc start_exercise(exercise: string,desiredOutput : string) =
 
      if input == "explain":
       clear_terminal()
-      run_script(explanation,true)
-      discard stdin.readLine()
+      echo explanation
+      
+     discard readLineFromStdin("Press enter to proceed..")
 
      if input == "hint":
       clear_terminal()
-      run_script(hint,true)
-      discard stdin.readLine()
+      echo hint
+
+      discard readLineFromStdin("Press enter to proceed..")
     
      if input == "clear":
       clear_terminal()
@@ -173,10 +194,13 @@ proc start_exercise(exercise: string,desiredOutput : string) =
       quit()
      else:
       clear_terminal()
-    
-  #if done:
-    #done = false
-    # break
+
+     if input == "path":
+       clear_terminal()
+       echo full_path
+       discard readLineFromStdin("Press enter to proceed..")
+
+
 
 #-----PATH----#
 # section uses : system/nimscript, std/os
