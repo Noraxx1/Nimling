@@ -36,11 +36,11 @@ proc  print_progress(ammount: int,exercise: string) =
 
 proc done(filename: string): bool =
   let file = open(filename)
-  
+
   if file != nil:
     var line = file.readLine()
     close(file)
-    
+
     if line != "":
       if line.contains("NOT") and line.contains("DONE"):
         return false
@@ -81,31 +81,34 @@ proc clear_terminal() =
   setCursorPos(0, 0)
   stdout.eraseScreen()
   stdout.flushFile()
-  
+
   # stdout.resetAttributes()
 
 type
  json_data = object
    hint: string
    explanation: string
-  
+   desout: string
+
 proc fetch_json(fileName: string): json_data =
  let jsonData = parseFile(fileName)
  result.hint = jsonData["hint"].getStr()
  result.explanation = jsonData["explanation"].getStr()
+ result.desout = jsonData["desout"].getStr()
 
 
 #----MAIN PROCESS----#
 # uses :  std/strutils, std/terminal, std/os, json
 
-proc start_exercise(exercise: string,desiredOutput : string) =
+proc start_exercise(exercise: string) =
   let full_path = fmt"exercises/{exercise}/"
   let to_fix = fmt"{full_path}/main.nim"
 
-  let exercise_data = fetch_json(fmt"{full_path}/data.json")
+  let exercise_data = fetch_json(fmt"{full_path}data.json")
 
-  let explanation = exercise_data.explanation
-  let hint = exercise_data.hint
+  var explanation = exercise_data.explanation
+  var hint = exercise_data.hint
+  var desiredOutput = exercise_data.desout
 
   if explanation == "None":
     explanation = "Sorry theres no explanation for this exercise."
@@ -157,7 +160,7 @@ proc start_exercise(exercise: string,desiredOutput : string) =
           stdout.styledWriteLine(fgRed,"^^^^^^^")
           echo "[Nimlings] Output should contain/be: " & desiredOutput
           echo ""
-#a
+
           discard readLineFromStdin("Press enter to proceed..")
 
 
@@ -221,20 +224,17 @@ proc init() =
 
   # NOTE : the path moves already to the exercises folder
 
-  start_exercise("base/firstprogram","Hello World!") #1
+  start_exercise("base/firstprogram") #1
 
   # VARIABLES #
-  start_exercise("base/variables/declaration","Your age is:")#2
-  start_exercise("base/variables/immutable/let","1.59")#3
-  start_exercise("base/variables/immutable/const","hi")#4
-  start_exercise("base/variables/datatypes1","14")#5
-  start_exercise("base/variables/floats","10.4")#6
-  start_exercise("base/variables/transmutation","28.456")#7
+  #start_exercise("base/variables/declaration","Your age is:")#2
+  #start_exercise("base/variables/immutable/let","1.59")#3
+  #start_exercise("base/variables/immutable/const","hi")#4
+  #start_exercise("base/variables/datatypes1","14")#5
+  #start_exercise("base/variables/floats","10.4")#6
+  #start_exercise("base/variables/transmutation","28.456")#7
   
   # FIRST QUIZ #
-  start_exercise("base/quiz/pipe","6.4")#8
-
-
-
+  #start_exercise("base/quiz/pipe","6.4")#8
 
 init()
