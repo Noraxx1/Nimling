@@ -1,6 +1,6 @@
-<h1 align="center">Nimlings: Learn <img src="https://github.com/nim-lang/assets/blob/master/Art/logo-crown.png?raw=true" width=45px style="vertical-align: middle;"> Nim with ease!</h1>
-<div align="center">
-<img  src="https://img.shields.io/badge/Exercises-7-e5c890?logo=w3c&logoColor=fff&style=for-the-badge&labelColor=302D41"  alt="W3C"></a><a  href="https://github.com/Noraxx1/Nimling/issues"> <img  alt="Issues"  src="https://img.shields.io/github/issues/Noraxx1/Nimling?style=for-the-badge&logo=gitbook&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41"></a><a  href="https://disc ord.com/servers/907385605422448742"> <img  alt="Stargazers"  src="https://img.shields.io/github/stars/Noraxx1/nimling?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41"></a> <img  alt="Releases"  src="https://img.shields.io/badge/version-V1.0.5-A6DA95?style=for-the-badge&logo=github&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41"/></a>
+<h1 style="text-align: center;">Nimlings: Learn <img src="https://github.com/nim-lang/assets/blob/master/Art/logo-crown.png?raw=true" width=45px style="vertical-align: middle;"> Nim with ease!</h1>
+<div style="text-align: center;">
+<img  src="https://img.shields.io/badge/Exercises-7-e5c890?logo=w3c&logoColor=fff&style=for-the-badge&labelColor=302D41"  alt="W3C"></a><a  href="https://github.com/Noraxx1/Nimling/issues"> <img  alt="Issues"  src="https://img.shields.io/github/issues/Noraxx1/Nimling?style=for-the-badge&logo=gitbook&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41"></a><a  href="https://discord.com/servers/907385605422448742"> <img  alt="Stargazers"  src="https://img.shields.io/github/stars/Noraxx1/nimling?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41"></a> <img  alt="Releases"  src="https://img.shields.io/badge/version-V1.0.5-A6DA95?style=for-the-badge&logo=github&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41"/></a>
 </div>
 
 ___
@@ -23,7 +23,7 @@ If you use Windows OS you will need to install an additional tool called **Make*
 ## The installation process
 Create a folder (directory) on your PC. Then, open it using any terminal (cmd). Then, run the following program to copy the files from this repository to the newly created folder: `git clone https://github.com/Noraxx1/Nimling`.
 
-Now, go inside of the folder you just copied (Numlings). If it isn't present and you just have the files of the repository right in your folder, move on to the next step.
+Now, go inside of the folder you just copied (Nimlings). If it isn't present and you just have the files of the repository right in your folder, move on to the next step.
 
 To compile the program (make it an executable file) you will need to run one of these commands:
 - For Windows: `make windows`
