@@ -7,5 +7,10 @@ Note: floats take up *8 the memory of a int! So you should use them only when ne
 Note: you can declare a float by adding a deciman number to it eg. `3.0`",
 
 
+<<<<<<< HEAD
     "hint" : "This code is trying to  multiply a float for a integrer,transform the that `8` in to a `8.0`"
+=======
+    "hint" : "This code is trying to  multiply a float for a integrer,transform the that `8` in to a `8.0`",
+    "desired_output" : "10.4"
+>>>>>>> 8fdcfe4 (update)
 }
