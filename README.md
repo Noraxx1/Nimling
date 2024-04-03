@@ -28,12 +28,15 @@ Now, go inside of the folder you just copied (Nimlings). If it isn't present and
 To compile the program (make it an executable file) you will need to run one of these commands:
 - For Windows: `make windows`
 - For Linux: `make linux`
-
+x
 After that, you will find the executable in the build directory. Move to it and run it from the terminal.
 ___
 
-### I whant to contribute
-please read our [contributing.md](contributing.md) file
+### How do I contribute?
+If you would like to help us in the development of Nimlings, 
+consider checking [CONTRIBUTE.md](CONTRIBUTE.md) file. There you will see instructions on how to 
+create your own exercises and more.
+___
 ### Credits
 
 - Original Nimlings; has been discontinued: https://github.com/sergiotapia/nimlings

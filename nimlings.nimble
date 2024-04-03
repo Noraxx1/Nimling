@@ -1,4 +1,4 @@
-# Package
+# Packages
 
 version       = "1.1.5"
 author        = "Noraxx"

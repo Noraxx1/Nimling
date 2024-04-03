@@ -10,7 +10,7 @@ linux:
 
 
 windows:
-    @echo warning windows build is still instable.
+    @echo Building for Windows...
     mkdir build
     xcopy /s /y src\*.nim build\
     nimble build

@@ -3,4 +3,8 @@
 it is very similar to `let` type variable."
 
     "hint" : "Whe are trying to create a cosntant variabl and also change its value all while inside in a process,that will never work!",
+<<<<<<< HEAD
+=======
+    "desired_output" : "Hi"
+>>>>>>> 8fdcfe4 (update)
 }

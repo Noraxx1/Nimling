@@ -14,5 +14,10 @@ var <name>: <type> = <value>  # Use this if you want to declare a variable with 
 var <name> = <value>  # Nim also offers automatic type detection if you just want to assign a value without specifying the type. ",
 
 
+<<<<<<< HEAD
     "hint" : "This code giving a wrong a content to the variable age,you should definitely give one to it."
+=======
+    "hint" : "This code giving a wrong a content to the variable age,you should definitely give one to it.",
+    "desired_output": "Your age is"
+>>>>>>> 8fdcfe4 (update)
 }

@@ -6,6 +6,7 @@ Note: you can use the `help` command in the nimlings console to get a list of po
 Note: The 'echo' function in Nim is used to print text to the console.
 Note: Although Nim doesn't strictly require a 'main' procedure, we've included one here for clarity and ease of understanding. When we call 'main()', we execute the procedures defined within it.",
   
-    "hint": "To proceed, modify the 'main' procedure to print 'Hello World!' to the console using the 'echo' command."
+    "hint": "To proceed, modify the 'main' procedure to print 'Hello World!' to the console using the 'echo' command.",
+    "desired_output": "Hello World!"
   }
   
