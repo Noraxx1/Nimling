@@ -1,5 +1,5 @@
 <h1 align="center">Nimlings: Learn <img src="https://github.com/nim-lang/assets/blob/master/Art/logo-crown.png?raw=true" width=45px style="vertical-align: middle;"> Nim with ease!</h1>
-<div align="center">
+<div align="center" style="text-decoration: none;">
 <img  src="https://img.shields.io/badge/Exercises-7-e5c890?logo=w3c&logoColor=fff&style=for-the-badge&labelColor=302D41"  alt="W3C"></a><a  href="https://github.com/Noraxx1/Nimling/issues" style="text-decoration: none;"> <img  alt="Issues"  src="https://img.shields.io/github/issues/Noraxx1/Nimling?style=for-the-badge&logo=gitbook&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41"></a><a  style="text-decoration: none;" href="https://disc ord.com/servers/907385605422448742"> <img  alt="Stargazers"  src="https://img.shields.io/github/stars/Noraxx1/nimling?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41"></a> <img  alt="Releases"  src="https://img.shields.io/badge/version-V1.2.5-A6DA95?style=for-the-badge&logo=github&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41"/></a>
 </div>
 
