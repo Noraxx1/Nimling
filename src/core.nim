@@ -180,7 +180,6 @@ proc start_exercise(exercise: string) =
       clear_terminal()
       echo explanation
 
-     discard readLineFromStdin("Press enter to proceed..")
 
      if input == "hint":
       clear_terminal()
