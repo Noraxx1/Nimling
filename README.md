@@ -7,7 +7,7 @@
     <img alt="Releases"  src="https://img.shields.io/badge/version-V1.2.5-A6DA95?style=for-the-badge&logo=github&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41">
   
 </div>
-________________________________________________________________________________________________________________
+___________________
 
 ## What's Nimlings?
 Nimlings is a tool that allows anyone to learn **Nim programming language** with ease. You are given "exercises" - pieces of broken, incorrect code. Afterwards, you have to fix the code yourself and then check if it works as intended in the exercise.
