@@ -24,5 +24,23 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Test
       run: |
-        nimble install -y
         nimble build
+
+  publish_release:
+    needs: tests
+    runs-on: ubuntu-latest
+    steps:
+    - name: Generate version number
+      id: version
+      run: echo "VERSION=$(date +%Y%m%d)-$(printf "%04d" $((RANDOM % 10000)))" >> $GITHUB_ENV
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ env.VERSION }}
+        release_name: Release ${{ env.VERSION }}
+        body: |
+        draft: false
+        prerelease: false
