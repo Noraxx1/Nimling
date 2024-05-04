@@ -9,12 +9,4 @@ linux:
 	@rm -f build/exercises.nim
 
 
-windows:
-    @echo Building for Windows...
-    mkdir build
-    xcopy /s /y src\*.nim build\
-    nimble build
-    move nimlings.exe build
-    del /Q build\exercises.nim
-
 .PHONY: linux windows

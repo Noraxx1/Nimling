@@ -1,23 +1,17 @@
 {
     "explanation": "NOTE: In coding, we have different types of variables. 
-For example, 'int' for integers and 'string' for text. 
+    For example, 'int' for integers and 'string' for text.
 
-Nim is statically typed, which means you need to declare the type of a variable before using it. Here's how you can define variables: 
+    Nim is statically typed, which means you need to declare the type of a variable before using it. Here's how you can define variables:
 
-NOTE: whe can also define multiple variables by typing `var` followed by a indentation and then multiples variables 
-NOTE: The dollar symbol ($) transforms an integer to a string, making it possible to print a string followed by an integer with an `echo`, or else we would get a type mismatch. 
-NOTE: The ampersand (&) symbol is used to use multiple arguments in a function. We use it to print multiple texts in an `echo` function. 
-   
-
-var <name>: <type>  # If you only want to declare the variable without initializing it. But remember, you must assign a value to it later, or you'll get an error! 
-var <name>: <type> = <value>  # Use this if you want to declare a variable with a specific type and already know its value. 
-var <name> = <value>  # Nim also offers automatic type detection if you just want to assign a value without specifying the type. ",
+    NOTE: whe can also define multiple variables by typing `var` followed by a indentation and then multiples variables
+    NOTE: The dollar symbol ($) transforms an integer to a string, making it possible to print a string followed by an integer with an `echo`, or else we would get a type mismatch.
+    NOTE: The ampersand (&) symbol is used to use multiple arguments in a function. We use it to print multiple texts in an `echo` function.
 
 
-<<<<<<< HEAD
-    "hint" : "This code giving a wrong a content to the variable age,you should definitely give one to it."
-=======
-    "hint" : "This code giving a wrong a content to the variable age,you should definitely give one to it.",
+    var <name>: <type>  # If you only want to declare the variable without initializing it. But remember, you must assign a value to it later, or you'll get an error!
+    var <name>: <type> = <value>  # Use this if you want to declare a variable with a specific type and already know its value.
+    var <name> = <value>  # Nim also offers automatic type detection if you just want to assign a value without specifying the type. ",
+    "hint": "This code giving a wrong a content to the variable age, you should definitely give one to it.",
     "desired_output": "Your age is"
->>>>>>> 8fdcfe4 (update)
 }

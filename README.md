@@ -1,6 +1,6 @@
 <h1 align="center">Nimlings: Learn <img src="https://github.com/nim-lang/assets/blob/master/Art/logo-crown.png?raw=true" width=45px style="vertical-align: middle;"> Nim with ease!</h1>
-<div align="center">
-<img  src="https://img.shields.io/badge/Exercises-7-e5c890?logo=w3c&logoColor=fff&style=for-the-badge&labelColor=302D41"  alt="W3C"></a><a  href="https://github.com/Noraxx1/Nimling/issues"> <img  alt="Issues"  src="https://img.shields.io/github/issues/Noraxx1/Nimling?style=for-the-badge&logo=gitbook&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41"></a><a  href="https://disc ord.com/servers/907385605422448742"> <img  alt="Stargazers"  src="https://img.shields.io/github/stars/Noraxx1/nimling?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41"></a> <img  alt="Releases"  src="https://img.shields.io/badge/version-V1.2.5-A6DA95?style=for-the-badge&logo=github&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41"/></a>
+<div align="center" style="border-bottom: none;">
+`<img  src="https://img.shields.io/badge/Exercises-7-e5c890?logo=w3c&logoColor=fff&style=for-the-badge&labelColor=302D41"  alt="W3C"></a><a  href="https://github.com/Noraxx1/Nimling/issues" style="text-decoration: none;">` <img  alt="Issues"  src="https://img.shields.io/github/issues/Noraxx1/Nimling?style=for-the-badge&logo=gitbook&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41"></a><a  style="text-decoration: none;" href="https://disc ord.com/servers/907385605422448742"> <img  alt="Stargazers"  src="https://img.shields.io/github/stars/Noraxx1/nimling?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41"></a> <img  alt="Releases"  src="https://img.shields.io/badge/version-V1.3.5-A6DA95?style=for-the-badge&logo=github&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41"/></a>
 </div>
 
 ___
@@ -14,13 +14,15 @@ ___
 ## Why Nim?
 **Nim** is relatively new in the world of programming languages. It's an expressive, elegant and efficient. Future lies behind languages like Nim, and we want to help you learn it. The way Nimlings teaches is incredibly productive and intuitive. 
 
+## Installation
+just go to the [relase tab](https://github.com/Noraxx1/Nimling/releases) and download the preferred one
 ___
-## How do I install Nimlings?
-1. The installation process is straightforward. First let's setup the enviroment on your PC. You need to install the Nim programming language from their official website: https://nim-lang.org/install.html
+## Compiling from source
+1. The installation process is straightforward. First let's setup the environment on your PC. You need to install the Nim programming language from their official website: https://nim-lang.org/install.html
 2. Afterwards, you need to install a tool called **Git** - if you aren't already familiar with it, it allows for easy distribution of programming projects. You can install git from this website: https://git-scm.com/downloads. If you don't want to install Git for whatever reason, you may just copy the files from this repository to your computer manually.
 
 If you use Windows OS you will need to install an additional tool called **Make** - this one allows to easily build programming projects. You can download it from the following page: https://gnuwin32.sourceforge.net/packages/make.htm
-## The installation process
+
 Create a folder (directory) on your PC. Then, open it using any terminal (cmd). Then, run the following program to copy the files from this repository to the newly created folder: `git clone https://github.com/Noraxx1/Nimling`.
 
 Now, go inside of the folder you just copied (Nimlings). If it isn't present and you just have the files of the repository right in your folder, move on to the next step.
