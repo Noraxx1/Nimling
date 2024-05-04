@@ -1,0 +1,12 @@
+{
+    "explanation": "Welcome to the Nimlings! In this exercise, your task is to complete the code to output 'Hello World!' in the console.
+The code provided is incomplete, and your job is to fix it to achieve the desired output.
+
+Note: you can use the `help` command in the nimlings console to get a list of possible commands`
+Note: The 'echo' function in Nim is used to print text to the console.
+Note: Although Nim doesn't strictly require a 'main' procedure, we've included one here for clarity and ease of understanding. When we call 'main()', we execute the procedures defined within it.",
+  
+    "hint": "To proceed, modify the 'main' procedure to print 'Hello World!' to the console using the 'echo' command.",
+    "desired_output": "Hello World!"
+  }
+  

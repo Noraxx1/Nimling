@@ -1,0 +1,12 @@
+{
+    "explanation": "In nim you declare a immutable variable whit `let`,the value of a let can be set at any time
+but once is set it can't be changed anymore.
+For the rest is the same as declaring a normal `var`",
+
+<<<<<<< HEAD
+    "hint" : "Not only whe are trying to change an immutable variable,but also the second variable is wrong!"
+=======
+    "hint" : "Not only whe are trying to change an immutable variable,but also the second variable is wrong!",
+    "desired_output" : "6"
+>>>>>>> 8fdcfe4 (update)
+}
