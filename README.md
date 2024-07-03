@@ -8,6 +8,10 @@
   
 </div>
 
+# WARNING
+the developement of this project has currently stopped.
+
+
 ## What's Nimlings?
 Nimlings is a tool that allows anyone to learn **Nim programming language** with ease. You are given "exercises" - pieces of broken, incorrect code. Afterwards, you have to fix the code yourself and then check if it works as intended in the exercise.
 
